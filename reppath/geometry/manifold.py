@@ -22,7 +22,7 @@ class Manifold(object):
 
         Manifold.contains checks match to ambient shape only. Further specialization done by subclasses.
         """
-        return all(pt.size()[-self.ambient:] == self.shape)
+        return pt.size()[-self.ambient:] == self.shape
 
 
 class HyperSphere(Manifold):

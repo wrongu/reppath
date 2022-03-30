@@ -1,5 +1,5 @@
 import torch
-from geometry.manifold import Manifold
+from reppath.geometry.manifold import Manifold
 from typing import Callable
 import warnings
 

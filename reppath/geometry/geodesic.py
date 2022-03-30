@@ -1,5 +1,5 @@
 import torch
-from geometry.length_space import LengthSpace, Point, Scalar
+from reppath.geometry.length_space import LengthSpace, Point, Scalar
 from typing import Union, Iterable, List, Tuple
 import warnings
 

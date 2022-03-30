@@ -1,6 +1,6 @@
 import torch
-from geometry.length_space import LengthSpace, Point, Scalar
-from geometry.geodesic import midpoint
+from reppath.geometry.length_space import LengthSpace, Point, Scalar
+from reppath.geometry.geodesic import midpoint
 import warnings
 
 
