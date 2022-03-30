@@ -72,7 +72,7 @@ class SPDMatrix(SymmetricMatrix):
         # (2) is symmetric, up to 'atol' tolerance
         # (3) has all non-negative eigenvalues
         return super(SPDMatrix, self).contains(pt) and \
-               torch.all(torch.linalg.eigvalsh(pt) >= 0.0)
+               torch.all(torch.linalg.eigvalsh(pt) >= -atol)
 
 
 class DistMatrix(SymmetricMatrix):
@@ -85,7 +85,7 @@ class DistMatrix(SymmetricMatrix):
     def contains(self, pt: torch.Tensor, atol: float = 1e-6) -> bool:
         return super(DistMatrix, self).contains(pt) and \
                torch.allclose(torch.diag(pt), pt.new_zeros(pt.size()[0])) and \
-               torch.all(pt >= 0.)
+               torch.all(pt >= -atol)
 
 
 __all__ = ['Manifold', 'HyperSphere', 'Matrix', 'SPDMatrix', 'DistMatrix']
